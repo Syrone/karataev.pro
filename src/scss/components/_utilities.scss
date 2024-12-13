@@ -59,6 +59,10 @@ p {
 
 	+ p {
 		margin-top: 1rem;
+    
+    @media (min-width: 992px) {
+      margin-top: 1.5rem;
+    }
 	}
 }
 
