@@ -1,0 +1,292 @@
+.cards {
+	
+	@media (min-width: 992px) {
+		padding-block: 2rem;
+	}
+
+	> .container {
+		display: grid;
+
+		@media (min-width: 768px) {
+			grid-template-columns: repeat(2, minmax(0, 1fr));
+		}
+		
+		@media (min-width: 1200px) {
+			grid-template-columns: repeat(3, minmax(0, 1fr));
+		}
+	}
+}
+
+.card {
+	display: flex;
+	flex-direction: column;
+	padding: 2rem 0;
+
+	&:first-child {
+		@media (max-width: 768px) {
+			padding-top: 0;
+		}
+	}
+
+	&:last-child {
+		@media (max-width: 768px) {
+			padding-bottom: 0;
+		}
+	}
+
+	@media (min-width: 768px) {
+		padding: 2rem;
+	}
+
+	@media (min-width: 1200px) {
+		padding: 3rem;
+	}
+
+	@media (min-width: 1400px) {
+		padding: 3.5rem 4.25rem 2.75rem 3.5rem;
+	}
+
+	&-title {
+		font-weight: 500;
+		line-height: 1;
+		letter-spacing: -.02em;
+		margin-bottom: .75rem;
+	}
+
+	&-text {
+		font-size: .875rem;
+		line-height: 1.3;
+
+		@media (min-width: 992px) {
+			font-size: 1rem;
+		}
+
+		@media (min-width: 1200px) {
+			font-size: 1.125rem;
+		}
+
+		@media (min-width: 1400px) {
+			font-size: 1.25rem;
+		}
+
+		&:not(:last-child) {
+			margin-bottom: 2rem;
+		}
+	}
+	
+	&-footer {
+		display: flex;
+		align-items: flex-end;
+		justify-content: flex-end;
+		gap: 1.25rem;
+		margin-top: auto;
+
+		&::before {
+			content: '';
+			display: inline-block;
+			flex-shrink: 0;
+			margin-right: auto;
+			background-repeat: no-repeat;
+			background-size: contain;
+			background-position: left bottom;
+			pointer-events: none;
+			user-select: none;
+		}
+	}
+
+	&:not(:nth-child(3n)) {
+		
+		@media (min-width: 1200px) {
+			border-right: 1px solid #C7C7C7;
+		}
+	}
+
+	&:not(:nth-child(2n)) {
+		
+		@media (max-width: 1200px) and (min-width: 768px) {
+			border-right: 1px solid #C7C7C7;
+		}
+	}
+
+	&:not(:nth-child(-n + 3)) {
+		
+		@media (min-width: 1200px) {
+			border-top: 1px solid #C7C7C7;
+		}
+	}
+
+	&:not(:nth-child(-n + 2)) {
+		
+		@media (max-width: 1200px) and (min-width: 768px) {
+			border-top: 1px solid #C7C7C7;
+		}
+	}
+
+	&:not(:last-child) {
+		@media (max-width: 768px) {
+			border-bottom: 1px solid #C7C7C7;
+		}
+	}
+
+	&:nth-child(6n + 1) {
+
+		.card-footer {
+
+			&::before {
+				width: 1.5rem;
+				height: 1.5rem;
+				background-image: url(../img/card/card-lego-1.webp);
+
+				@media (min-width: 992px) {
+					width: 1.7rem;
+					height: 1.7rem;
+				}
+
+				@media (min-width: 1200px) {
+					width: 1.84rem;
+					height: 1.84rem;
+				}
+
+				@media (min-width: 1400px) {
+					width: 2rem;
+					height: 2rem;
+				}
+			}
+		}
+	}
+
+	&:nth-child(6n + 2) {
+
+		.card-footer {
+
+			&::before {
+				width: 2.375rem;
+				height: 1.5rem;
+				background-image: url(../img/card/card-lego-2.webp);
+
+				@media (min-width: 992px) {
+					width: 3.3rem;
+					height: 1.7rem;
+				}
+
+				@media (min-width: 1200px) {
+					width: 3.45rem;
+					height: 1.84rem;
+				}
+
+				@media (min-width: 1400px) {
+					width: 3.75rem;
+					height: 2rem;
+				}
+			}
+		}
+	}
+
+	&:nth-child(6n + 3) {
+
+		.card-footer {
+
+			&::before {
+				width: 1.5rem;
+				height: 3.375rem;
+				background-image: url(../img/card/card-lego-3.webp);
+
+				@media (min-width: 992px) {
+					width: 1.7rem;
+					height: 4.4rem;
+				}
+
+				@media (min-width: 1200px) {
+					width: 1.84rem;
+					height: 4.6rem;
+				}
+
+				@media (min-width: 1400px) {
+					width: 2rem;
+					height: 5rem;
+				}
+			}
+		}
+	}
+
+	&:nth-child(6n + 4) {
+
+		.card-footer {
+
+			&::before {
+				width: 4.25rem;
+				height: 1.5rem;
+				background-image: url(../img/card/card-lego-4.webp);
+
+				@media (min-width: 992px) {
+					width: 5.6rem;
+					height: 1.7rem;
+				}
+
+				@media (min-width: 1200px) {
+					width: 5.86rem;
+					height: 1.84rem;
+				}
+
+				@media (min-width: 1400px) {
+					width: 6.375rem;
+					height: 2rem;
+				}
+			}
+		}
+	}
+
+	&:nth-child(6n + 5) {
+
+		.card-footer {
+
+			&::before {
+				width: 3.375rem;
+				height: 3.375rem;
+				background-image: url(../img/card/card-lego-5.webp);
+
+				@media (min-width: 992px) {
+					width: 4.4rem;
+					height: 4.4rem;
+				}
+
+				@media (min-width: 1200px) {
+					width: 4.6rem;
+					height: 4.6rem;
+				}
+
+				@media (min-width: 1400px) {
+					width: 5rem;
+					height: 5rem;
+				}
+			}
+		}
+	}
+
+	&:nth-child(6n + 6) {
+
+		.card-footer {
+
+			&::before {
+				width: 4.25rem;
+				height: 3.375rem;
+				background-image: url(../img/card/card-lego-6.webp);
+
+				@media (min-width: 992px) {
+					width: 5.6rem;
+					height: 4.4rem;
+				}
+
+				@media (min-width: 1200px) {
+					width: 5.86rem;
+					height: 4.6rem;
+				}
+
+				@media (min-width: 1400px) {
+					width: 6.375rem;
+					height: 5rem;
+				}
+			}
+		}
+	}
+}

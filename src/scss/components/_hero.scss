@@ -1,0 +1,155 @@
+.hero {
+
+	> .container {
+		display: flex;
+		gap: 2.5rem;
+	}
+
+	&-start {
+		display: flex;
+		flex-direction: column;
+		gap: 2rem;
+		justify-content: space-between;
+		position: relative;
+		text-transform: uppercase;
+
+		&-subtitle,
+		&-buttons {
+			max-width: 100%;
+		}
+
+		&-subtitle {
+			font-family: var(--font-secondary);
+			font-size: .875rem;
+			font-weight: 500;
+			color: #8C8C8C;
+
+			@media (min-width: 992px) {
+				max-width: calc(100% - 12.5rem);
+				font-size: 1.25rem;
+			}
+
+			@media (min-width: 1200px) {
+				max-width: calc(100% - 15rem);
+				font-size: 1.5rem;
+			}
+
+			@media (min-width: 1400px) {
+				max-width: calc(100% - 22.5rem);
+				font-size: 1.75rem;
+			}
+		}
+
+		&-buttons {
+			display: none;
+
+			@media (min-width: 992px) {
+				max-width: calc(100% - 22.5rem);
+				display: flex;
+				flex-wrap: wrap;
+				gap: 1.25rem;
+			}
+
+			@media (min-width: 1200px) {
+				max-width: calc(100% - 25rem);
+			}
+
+			@media (min-width: 1400px) {
+				max-width: calc(100% - 27.5rem);
+			}
+		}
+
+		&-picture,
+		&-image {
+
+			@media (min-width: 992px) {
+				pointer-events: none;
+				user-select: none;
+				position: absolute;
+				z-index: -1;
+			}
+		}
+
+		&-picture {
+
+			@media (min-width: 992px) {
+				inset: 0;
+			}
+		}
+
+		&-image {
+			width: 100%;
+			max-width: 30rem;
+			height: auto;
+			display: block;
+			margin-inline: auto;
+			object-fit: contain;
+			bottom: 0;
+			right: 0;
+
+			@media (min-width: 992px) {
+				width: 20rem;
+				max-width: 100%;
+				margin-inline: unset;
+			}
+
+			@media (min-width: 1200px) {
+				width: 22.5rem;
+			}
+
+			@media (min-width: 1400px) {
+				width: 25rem;
+			}
+		}
+	}
+
+	&-end {
+		display: none;
+		
+		@media (min-width: 992px) {
+			display: grid;
+			flex: 1 0 22.5rem;
+		}
+
+		@media (min-width: 1400px) {
+			flex: 1 0 25rem;
+		}
+
+		&-item {
+			min-height: 10rem;
+			display: flex;
+			flex-direction: column;
+			justify-content: center;
+
+			font-size: 1.25rem;
+			font-weight: 700;
+			text-transform: uppercase;
+			padding: 2.25rem 2rem;
+			border-left: 1px solid #C7C7C7;
+			position: relative;
+
+			@media (min-width: 1400px) {
+				padding: 2.25rem 3rem;
+			}
+
+			&::after {
+				content: '';
+				width: 3rem;
+				height: 3rem;
+				display: block;
+				background-image: url(../img/hero-lego.webp);
+				background-repeat: no-repeat;
+				background-size: contain;
+				user-select: none;
+				pointer-events: none;
+				position: absolute;
+				top: .625rem;
+				right: 0;
+			}
+
+			&:not(:last-child) {
+				border-bottom: 1px solid #C7C7C7;
+			}
+		}
+	}
+}

@@ -1,0 +1,62 @@
+.brand {
+	display: inline-flex;
+	align-items: center;
+	gap: 0.5rem;
+	font-family: var(--font-secondary);
+	font-size: 1.5rem;
+	line-height: 1;
+	color: var(--text-color);
+	outline: none;
+	text-transform: uppercase;
+	transition-property: color;
+	transition-duration: var(--transition-duration);
+	transition-timing-function: var(--transition-timing-function);
+
+	&:is(:active, .is-active) {
+		color: var(--primary);
+	}
+
+	@media (hover: hover) {
+
+		&:is(:hover, :focus-visible) {
+			color: var(--primary);
+		}
+	}
+
+	@media (min-width: 992px) {
+		font-size: 2rem;
+	}
+
+	&-image {
+		width: 1.5rem;
+		height: auto;
+		display: block;
+		object-fit: contain;
+
+		@media (min-width: 992px) {
+			width: 2rem;
+		}
+	}
+
+	&-text {
+		display: flex;
+		flex-direction: column;
+
+		&-main {
+
+			> span {
+				font-weight: 800;
+			}
+		}
+
+		&-sub {
+			font-size: .375rem;
+			font-weight: 500;
+			margin-left: .25em;
+
+			@media (min-width: 992px) {
+				font-size: .5rem;
+			}
+		}
+	}
+}

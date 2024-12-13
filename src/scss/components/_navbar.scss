@@ -1,0 +1,26 @@
+.navbar {
+
+	&-nav {
+
+		.nav-link {
+			--_fs: 1.25rem;
+			--_fw: 500;
+			--_color: #6F6F6F;
+			--_padding: 0 .375rem;
+
+			--_color-hover: var(--light);
+			--_color-active: var(--light);
+
+			--_bg-hover: var(--primary);
+			--_bg-active: var(--primary);
+
+			margin: 0 -.375rem;
+
+			@media (min-width: 1400px) {
+				--_fs: .875rem;
+
+				margin: 0;
+			}
+		}
+	}
+}
