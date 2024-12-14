@@ -1,0 +1,116 @@
+.swiper-container {
+	--swiper-navigation-size: 1.5rem;
+	--swiper-navigation-color: #D9D9D9;
+	--swiper-pagination-bullet-size: .875rem;
+	--swiper-pagination-bullet-inactive-opacity: 1;
+	--swiper-pagination-bullet-inactive-color: #D9D9D9;
+	--swiper-pagination-color: #D9D9D9;
+	--swiper-pagination-bullet-horizontal-gap: 0;
+
+	@media (min-width: 992px) {
+		--swiper-pagination-bullet-size: 1rem;
+	}
+
+	position: relative;
+
+	.swiper {
+		margin-inline: calc(var(--container-offset) * -1);
+		padding-inline: var(--container-offset);
+
+		@media (min-width: 1640px) {
+			margin-inline: 0;
+		}
+	}
+}
+
+.swiper-footer {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	gap: 2rem;
+	margin-top: 3rem;
+	
+	@media (min-width: 992px) {
+		margin-top: 2.5rem;
+	}
+
+	.swiper-button-prev,
+	.swiper-button-next,
+	.swiper-pagination {
+		position: static;
+	}
+}
+
+.swiper-button-prev,
+.swiper-button-next {
+	width: var(--swiper-navigation-size);
+	flex-shrink: 0;
+	margin-top: unset;
+	transition-property: color;
+	transition-duration: var(--transition-duration);
+	transition-timing-function: var(--transition-timing-function);
+
+	@media (max-width: 992px) {
+		display: none;
+	}
+
+	&::after {
+		all: unset;
+	}
+
+	.icon {
+		--_size: 100%;
+	}
+
+	@media (hover: hover) {
+		&:is(:hover, :focus-visible) {
+			--swiper-navigation-color: var(--primary);
+		}
+	}
+
+	&:active {
+		--swiper-navigation-color: var(--primary);
+	}
+}
+
+.swiper-pagination {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	gap: 1.25rem;
+	
+	@media (min-width: 992px) {
+		gap: 2rem;
+	}
+
+	&.swiper-pagination-bullets.swiper-pagination-horizontal {
+		width: auto;
+	}
+
+	&-bullet {
+		flex-shrink: 0;
+		transition-property: transform, background;
+		transition-duration: var(--transition-duration);
+		transition-timing-function: var(--transition-timing-function);
+
+		@media (hover: hover) {
+			&:is(:hover, :focus-visible) {
+				--swiper-pagination-bullet-inactive-color: var(--primary);
+				--swiper-pagination-color: var(--primary);
+			}
+		}
+	
+		&:active {
+			--swiper-pagination-bullet-inactive-color: var(--primary);
+			--swiper-pagination-color: var(--primary);
+		}
+
+		&-active {
+			transform: scale(1.75);
+
+			@media (min-width: 992px) {
+				transform: scale(1.5);
+			}
+		}
+	}
+}

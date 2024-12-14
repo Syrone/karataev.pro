@@ -1,0 +1,121 @@
+.features {
+
+	&-content {
+		display: grid;
+		gap: 2rem;
+		
+		@media (min-width: 992px) {
+			grid-template-columns: minmax(0rem, 60rem) minmax(0rem, 28.125rem);
+			gap: 3.75rem;
+			justify-content: space-between;
+		}
+
+		&-start {
+			display: grid;
+			align-content: start;
+			gap: 2rem;
+
+			@media (min-width: 992px) {
+				font-size: 1.25rem;
+			}
+		}
+
+		&-end {
+			display: grid;
+			gap: 2rem;
+
+			&-picture {
+				position: relative;
+			}
+
+			&-slogan {
+				font-size: 1.5rem;
+				font-weight: 700;
+				color: #DEDCDC;
+				pointer-events: none;
+				user-select: none;
+				position: absolute;
+				
+				@media (min-width: 992px) {
+					font-size: 2rem;
+				}
+
+				&:nth-child(1) {
+					top: 0;
+					left: 0;
+				}
+
+				&:nth-child(2) {
+					right: 0;
+					bottom: 0;
+					text-align: end;
+				}
+			}
+
+			&-image {
+				width: 100%;
+				height: 100%;
+				display: block;
+				object-fit: contain;
+			}
+		}
+
+		&-items {
+			display: grid;
+			gap: 2rem;
+
+			@media (min-width: 576px) {
+				grid-template-columns: repeat(2, minmax(0, 1fr));
+			}
+
+			@media (min-width: 768px) {
+				grid-template-columns: repeat(3, minmax(0, 1fr));
+			}
+
+			@media (min-width: 992px) {
+				grid-template-columns: repeat(2, minmax(0, 1fr));
+				gap: 2.5rem;
+			}
+
+			@media (min-width: 1200px) {
+				grid-template-columns: repeat(3, minmax(0, 1fr));
+			}
+		}
+
+		&-item {
+			display: grid;
+			align-content: start;
+			position: relative;
+
+			&::before {
+				content: '';
+				display: block;
+				width: 1.75rem;
+				height: 1.75rem;
+				margin-left: auto;
+				background-image: url(../img/features/decoration.webp);
+				background-repeat: no-repeat;
+				background-size: contain;
+				background-position: bottom right;
+				position: absolute;
+				top: 0;
+				right: 0;
+
+				@media (min-width: 992px) {
+					width: 3.125rem;
+					height: 3rem;
+					position: static;
+				}
+			}
+
+			&-title {
+				font-size: 2.5rem;
+				line-height: 1;
+			}
+
+			&-text {
+				text-align: start;
+			}
+		}
+	}
+}

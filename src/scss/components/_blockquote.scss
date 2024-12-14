@@ -1,0 +1,40 @@
+.blockquote {
+	font-weight: 700;
+	line-height: 1;
+	letter-spacing: -.02em;
+	margin: 3rem 0;
+	
+	@media (min-width: 992px) {
+		display: flex;
+		flex-direction: row;
+		align-items: center;
+		font-size: 1.25rem;
+		margin: 2rem 0;
+	}
+
+	&::before {
+		content: '';
+		display: block;
+		float: left;
+		width: 3rem;
+		height: 3rem;
+		margin-right: .5rem;
+		margin-bottom: .5rem;
+		flex-shrink: 0;
+		background-image: url(../img/benefits/mark.webp);
+		background-repeat: no-repeat;
+		background-size: contain;
+		background-position: center;
+
+		@media (min-width: 992px) {
+			width: 6.25rem;
+			height: 6.25rem;
+			margin: 0;
+			float: unset;
+		}
+	}
+
+	p {
+		text-align: start;
+	}
+}
