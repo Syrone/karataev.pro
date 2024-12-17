@@ -1,20 +1,5 @@
 .case {
 
-	&-content {
-		display: grid;
-		grid-template-columns: minmax(0rem, 1fr);
-		justify-content: space-between;
-		gap: 3rem 2.5rem;
-
-		@media (min-width: 768px) {
-			grid-template-columns: repeat(2, minmax(0rem, 1fr));
-		}
-
-		@media (min-width: 1200px) {
-			grid-template-columns: repeat(3, minmax(0rem, 27.8125rem));
-		}
-	}
-
 	&-item {
 		width: 100%;
 		position: relative;
