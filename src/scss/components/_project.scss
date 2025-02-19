@@ -1,0 +1,134 @@
+.project {
+
+	> .container {
+		display: grid;
+		grid-template-columns: 100%;
+		align-items: center;
+		gap: 2rem;
+
+		@media (min-width: 992px) {
+			grid-template-columns: 1fr auto;
+			gap: 3rem;
+		}
+
+		@media (min-width: 1200px) {
+			gap: 4rem;
+		}
+
+		@media (min-width: 1400px) {
+			gap: 6.25rem;
+		}
+	}
+
+	.page-title {
+
+		&::after {
+			all: initial;
+		}
+	}
+
+	&-website {
+		--_fs: 1.25rem;
+		--_color: var(--primary);
+		--_color-hover: var(--title-color);
+		--_color-active: var(--title-color);
+
+		@media (min-width: 992px) {
+			--_fs: 1.5rem;
+		}
+	}
+
+	&-content {
+		gap: 1.5rem;
+
+		@media (min-width: 992px) {
+			font-size: 1.25rem;
+			gap: 3rem;
+		}
+
+		&,
+		&-header {
+			display: flex;
+			flex-direction: column;
+		}
+
+		&-header {
+			align-items: flex-start;
+			gap: .5rem;
+			
+			@media (min-width: 992px) {
+				gap: .75rem;
+			}
+		}
+	}
+
+	&-picture {
+		width: 100%;
+		position: relative;
+
+		@media (min-width: 992px) {
+			width: 28.75rem;
+		}
+
+		@media (min-width: 1400px) {
+			width: 33.75rem;
+		}
+
+		&-image {
+			background-repeat: no-repeat;
+			background-size: cover;
+			background-position: top center;
+			margin: 2.25vw 2.25vw 0;
+			position: absolute;
+			inset: 0;
+			aspect-ratio: 16 / 9;
+			
+			@media (min-width: 992px) {
+				margin: .6875rem .6875rem 0;
+			}
+
+			@media (min-width: 1400px) {
+				margin: .8125rem .75rem 0;
+			}
+		}
+
+		.image {
+			width: 100%;
+			height: 100%;
+			display: block;
+			object-fit: contain;
+		}
+
+		&::after,
+		&::before {
+
+			@media (min-width: 992px) {
+				content: '';
+				display: block;
+				background-repeat: no-repeat;
+				background-size: contain;
+				background-position: center;
+				position: absolute;
+				pointer-events: none;
+				user-select: none;
+				z-index: -1;
+			}
+		}
+
+		&::after {
+			width: 200px;
+			height: 200px;
+			background-image: url(../img/project/decoration-1.webp);
+			bottom: calc(100% - 5rem);
+			right: calc(100% - 6rem);
+		}
+
+		&::before {
+			width: 60px;
+			height: 60px;
+			background-image: url(../img/project/decoration-2.webp);
+			left: 100%;
+			bottom: 100%;
+		}
+	}
+}

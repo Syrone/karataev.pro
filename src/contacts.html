@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="ru" class="page">
+
+@include('partials/head.html', {title: 'KARATAEV.PRO Продвижение бизнеса в поисковых системах'})
+<script src="https://api-maps.yandex.ru/2.1/?lang=ru_RU" type="text/javascript"></script>
+
+<body class="page-body">
+  @include('partials/h1.html', {title: 'Главная страница'})
+
+  <div class="site-container">
+    @include('partials/header.html')
+
+    <main class="main">
+      <div class="main-section">
+        <section class="section page-header page-header--contacts">
+          <div class="container">
+            <h2 class="page-title">
+              КОНТАКТЫ
+            </h2>
+
+            <div class="page-decoration">
+              <p class="page-decoration-text page-decoration-text--upper">
+                в SEO
+              </p>
+              <p class="page-decoration-text page-decoration-text--lower">
+                с 2010 ГОДА
+              </p>
+
+              <div class="page-decoration-pictures">
+                <img loading="lazy" src="img/decorations/lego--bigger-light.webp" class="image" width="250" height="140"
+                  alt="Картинка">
+                <img loading="lazy" src="img/decorations/lego--bigger-primary.webp" class="image" width="272"
+                  height="154" alt="Картинка">
+                <img loading="lazy" src="img/decorations/lego--many-2.webp" class="image" width="272"
+                  height="154" alt="Картинка">
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section class="section section-map">
+          <div class="container">
+            <div class="map-wrapper">
+              <div id="map" class="map"></div>
+            </div>
+            <script>
+              const mapElement = document.querySelector('.map-wrapper')
+              ymaps.ready(init)
+
+              function init() {
+                var myMap = new ymaps.Map('map', {
+                  center: [55.751574, 37.573856], // Координаты (Москва)
+                  zoom: 10,
+                  controls: []
+                })
+              }
+
+              document.addEventListener('click', (event) => {
+                // Проверяем, находится ли элемент, по которому кликнули, внутри mapElement
+                const isInsideMap = mapElement.contains(event.target)
+                mapElement.classList.toggle('is-active', isInsideMap)
+              })
+            </script>
+
+            <div class="contacts">
+              <a href="tel:+74950000000" class="btn btn-phone">
+                <span>
+                  +7 495 <span class="text-color-primary">000 00 00</span>
+                </span>
+              </a>
+
+              <address class="address">
+                Москва, ул.&nbsp;дом
+              </address>
+
+              <a href="mailto:info@karataev.pro" class="btn btn-mail text-underline">
+                info@karataev.pro
+              </a>
+            </div>
+          </div>
+        </section>
+
+        <section class="section">
+          <div class="container">
+            <form>
+              <div class="form-fieldset-header">
+                <h2 class="form-fieldset-header-title">
+                  Заявка на консультацию
+                </h2>
+
+                <p class="form-fieldset-header-text">
+                  Хотите узнать, как улучшить видимость вашего сайта и достичь лучших результатов в поисковой выдаче?
+                  Заполните форму, и наш специалист свяжется с вами для бесплатной консультации в ближайшее время
+                </p>
+              </div>
+
+              <div class="field-controls" data-has-fields="4">
+                <div class="fieldset">
+                  <div class="field-control">
+                    <input type="text" class="field" name="Имя" placeholder="Имя" required>
+                  </div>
+                </div>
+                <div class="fieldset">
+                  <div class="field-control">
+                    <input type="text" class="field" name="Название компании" placeholder="Название компании" required>
+                  </div>
+                </div>
+                <div class="fieldset">
+                  <div class="field-control">
+                    <input type="tel" class="field" name="Телефон" placeholder="Телефон" required>
+                  </div>
+                </div>
+                <div class="fieldset">
+                  <div class="field-control">
+                    <input type="email" class="field" name="email" placeholder="e-mail" required>
+                  </div>
+                </div>
+              </div>
+
+              <div class="field-controls" data-has-fields="4">
+                <div class="fieldset" data-columns-field="3">
+                  <div class="field-control">
+                    <textarea class="field" name="Комментарий" placeholder="Опишите задачу которую хотите решить"
+                      required></textarea>
+                  </div>
+                </div>
+
+                <div class="form-footer">
+                  <button type="submit" class="btn btn-lg btn-primary btn-submit">
+                    ПЕРЕЗВОНИТЕ МНЕ
+
+                    <span class="icon">
+                      <svg>
+                        <use xlink:href="img/icons/arrow-right.svg#svg-arrow-right"></use>
+                      </svg>
+                    </span>
+                  </button>
+
+                  <div class="form-check">
+                    <label class="form-check-label">
+                      <input type="checkbox" class="form-check-input" name="policy" required checked>
+                      <span>
+                        СОГЛАСЕН НА ОБРАБОТКУ ПЕРСОНАЛЬНЫХ ДАННЫХ, ПОЛУЧЕНИЕ РАССЫЛОК, А ТАКЖЕ С <a href="#"
+                          class="btn btn-inline text-underline">ПОЛИТИКОЙ КОНФИДЕНЦИАЛЬНОСТИ</a> и <a href="#"
+                          class="btn btn-inline text-underline">договором оферты</a>
+                      </span>
+                    </label>
+                  </div>
+                </div>
+              </div>
+            </form>
+          </div>
+        </section>
+      </div>
+
+      @include('partials/offcanvases.html')
+    </main>
+
+    @include('partials/footer.html')
+  </div>
+</body>
+
+</html>

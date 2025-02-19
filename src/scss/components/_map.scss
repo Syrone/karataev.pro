@@ -1,0 +1,107 @@
+.section-map {
+
+	> .container {
+		display: grid;
+		grid-template-columns: 100%;
+		gap: 2rem;
+		
+		@media (min-width: 992px) {
+			grid-template-columns: 1fr max-content;
+			gap: initial;
+		}
+	}
+
+	.contacts {
+		gap: .5rem;
+		order: -1;
+
+		@media (min-width: 992px) {
+			padding: 3rem 0 3rem 2rem;
+			order: initial;
+		}
+		
+		@media (min-width: 1200px) {
+			gap: 1.5rem;
+			padding: 4rem 0 4rem 3rem;
+		}
+		
+		@media (min-width: 1400px) {
+			padding: 4rem 0 4rem 4rem;
+		}
+
+		.btn-phone {
+			--_fs: 1.75rem;
+			
+			@media (min-width: 1200px) {
+				--_fs: 2.5rem;
+			}
+			
+			@media (min-width: 1400px) {
+				--_fs: 3.75rem;
+			}
+		}
+
+		.address {
+			font-size: 1.25rem;
+			line-height: 1.35;
+			
+			@media (min-width: 1200px) {
+				font-size: 1.375rem;
+				line-height: 2.25;
+
+			}
+
+			@media (min-width: 1400px) {
+				font-size: 2rem;
+			}
+
+			@media (max-width: 991.98px) {
+				font-weight: 500;
+				color: var(--text-color);
+			}
+		}
+
+		.btn-mail {
+			--_fs: 1.25rem;
+
+			@media (min-width: 1200px) {
+				--_fs: 1.75rem;
+			}
+			
+			@media (min-width: 1400px) {
+				--_fs: 2.5rem;
+			}
+
+			@media (max-width: 991.98px) {
+				--_fw: 500;
+
+				text-decoration: none !important;
+			}
+		}
+	}
+}
+
+.map-wrapper {
+	cursor: pointer;
+
+	&:not(.is-active) * {
+		pointer-events: none;
+	}
+}
+
+.map {
+	min-height: 70vh;
+	min-height: 70svh;
+	min-height: 70dvh;
+
+	@media (min-width: 992px) {
+		min-height: initial;
+	}
+	
+	&,
+	> *,
+	> * > * {
+		width: 100% !important;
+		height: 100% !important;
+	}
+}
